@@ -8,18 +8,10 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-//解决vue中不能使用jquery的问题
-const webpack = require("webpack")
+
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-
-  //解决vue中使用jQuery
-  plugins: [new webpack.optimize.CommonsChunkPlugin('common.js'), new webpack.ProvidePlugin({
-    jQuery: "jquery",
-    $: "jquery"
-  })],
-
   entry: {
     app: './src/main.js'
   },
